@@ -1,0 +1,40 @@
+<%- include('../../partials/header.ejs') %>
+
+<body>
+    <%- include('../../partials/navbar.ejs') %>
+
+    <div class="container">
+        <hr>
+        <div class="card">
+
+            <div class="card-header">
+                <h2>Edição de categoria</h2>
+            </div>
+
+            <div class="card-body">
+                <form action="/categories/update" method="POST" onsubmit="atualizar(event, this)">
+                    <input type="hidden" name="id" value="<%- category.id %>">
+                    <input class="form-control" type="text" name="titleUpdate" value="<%- category.title %>" placeholder="Edite o título da categoria">
+                    <br>
+                    <button type="submit" class="btn btn-success">Atualizar</button>
+                    <a href="/admin/categories" class="btn btn-danger">Voltar</a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function atualizar(event, form){
+        var decision = confirm('Deseja atualizar essa categoria?')
+        if(decision){
+            form.submit()
+        }else{
+            event.preventDefault()
+        }
+    }
+</script>
+
+<%- include('../../partials/footer.ejs') %>

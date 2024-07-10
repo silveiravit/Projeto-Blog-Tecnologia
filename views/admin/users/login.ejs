@@ -1,0 +1,22 @@
+<%- include('../../partials/header.ejs') %>
+
+<div class="container">
+    <hr>
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Login de admin</h2>
+        </div>
+
+        <div class="card-body">
+            <form action="/authenticate" method="post">
+                <input class="form-control" type="email" name="email" id="" placeholder="exemplo@gmail.com"><br>
+                <input class="form-control" type="password" name="password" id="" placeholder="******"><br>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Entrar</button>
+                </div>
+                <br>
+                <p>Não tem conta? Faça seu <a href="/admin/users/create">cadastro</a></p>
+            </form>
+        </div>
+    </div>
+</div>
